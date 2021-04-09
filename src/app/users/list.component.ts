@@ -1,4 +1,5 @@
-﻿import { MaterialModule } from './../material.module';
+﻿import { User } from '@app/_models';
+import { MaterialModule } from './../material.module';
 import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
 

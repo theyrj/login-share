@@ -17,7 +17,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 ;
 
 import { MyprofileComponent } from './myprofile/myprofile.component'
-import { ChartsModule } from 'ng2-charts';
 
 
 
