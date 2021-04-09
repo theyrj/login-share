@@ -1,11 +1,12 @@
 ﻿<!-- nav -->
 <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="user">
     <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-        <a class="nav-item nav-link" routerLink="/myprofile" routerLinkActive="active" >MyProfile</a>
-
-  
-        <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a>
+        <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">My Profile</a>
+        <a class="nav-item nav-link" routerLink="/myprofile" routerLinkActive="active" >Table </a>
+        <a class="nav-item nav-link"   routerLinkActive="active" >Charts </a>
+        <a class="nav-item nav-link" routerLink="/users/add"  >Add users </a>
+        
+        <a class="nav-item nav-link" routerLink="/users" >Users</a>
         <a class="nav-item nav-link" (click)="logout()">Logout</a>
     </div>
 </nav>
@@ -14,6 +15,7 @@
 <div class="app-container" [ngClass]="{ 'bg-light': user }">
     <alert></alert>
     <router-outlet></router-outlet>
+    <app-home></app-home>
 </div>
 
 

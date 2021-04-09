@@ -1,9 +1,11 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { ListComponent } from './list.component';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
-
+import { User } from '@app/_models';
 import { AccountService, AlertService } from '@app/_services';
+import { HomeComponent } from '@app/home';
 
 @Component({ templateUrl: 'add-edit.component.html' })
 export class AddEditComponent implements OnInit {
@@ -12,6 +14,8 @@ export class AddEditComponent implements OnInit {
     isAddMode: boolean;
     loading = false;
     submitted = false;
+    user: User;
+
 
     constructor(
         private formBuilder: FormBuilder,
@@ -19,7 +23,9 @@ export class AddEditComponent implements OnInit {
         private router: Router,
         private accountService: AccountService,
         private alertService: AlertService
-    ) {}
+    ) {
+        this.user = this.accountService.userValue;
+    }
 
     ngOnInit() {
         this.id = this.route.snapshot.params['id'];
@@ -97,3 +103,6 @@ export class AddEditComponent implements OnInit {
             });
     }
 }
+
+
+

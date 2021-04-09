@@ -7,8 +7,11 @@ import { AccountService } from '@app/_services';
 @Component({ templateUrl: 'list.component.html' })
 export class ListComponent implements OnInit {
     users = null;
+    user: User;
+    constructor(private accountService: AccountService) {
+        this.user = this.accountService.userValue;
 
-    constructor(private accountService: AccountService) {}
+    }
 
     ngOnInit() {
         this.accountService.getAll()
@@ -24,3 +27,8 @@ export class ListComponent implements OnInit {
             .subscribe(() => this.users = this.users.filter(x => x.id !== id));
     }
 }
+
+
+
+
+
