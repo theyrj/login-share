@@ -1,4 +1,4 @@
-<p>myprofile works!</p>
+<p>myprofile hhhworks!</p>
 <!-- <div class="p-4">
     <div class="container">
         <h1>Hi {{user.firstName}}!</h1>
@@ -7,9 +7,6 @@
     </div>
 </div> -->
     
-
-
-
 
 
     <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
@@ -40,5 +37,12 @@
     
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    
+
     </table>
+
+    <mat-paginator [pageSize]="2" [pageSizeOptions]="[2, 4, 6, 10]">
+    </mat-paginator>
+
     

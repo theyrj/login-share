@@ -1,10 +1,11 @@
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MaterialModule} from '@app/material.module';
 import { User } from '@app/_models';
 import { AccountService } from '@app/_services';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-
+import { MatPaginator } from '@angular/material/paginator';
 
 
 export interface PeriodicElement {
@@ -39,9 +40,13 @@ export class MyprofileComponent implements AfterViewInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
    ngAfterViewInit() {
     this.dataSource.sort = this.sort;
+     
+    this.dataSource.paginator = this.paginator;
+
 
 }
   
