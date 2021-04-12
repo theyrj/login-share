@@ -6,7 +6,9 @@
         <p><a routerLink="/users">Manage Users</a></p>
     </div>
 </div> -->
-    
+<input class="filter" (keyup)="applyFilter($event.target.value)" matInput placeholder="Filter">
+
+  
 
 
     <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
@@ -42,7 +44,7 @@
 
     </table>
 
-    <mat-paginator [pageSize]="2" [pageSizeOptions]="[2, 4, 6, 10]">
+    <mat-paginator [pageSize]="8" [pageSizeOptions]="[2, 4, 6, 10]">
     </mat-paginator>
 
     
